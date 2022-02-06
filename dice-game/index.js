@@ -12,14 +12,18 @@ rollBtn.addEventListener('click', function() {
 })
 
 function startGame() {
-    if (player1Turn) {
-        player1Score += theRandomNumber
-        player1Scoreboard.innerHTML = player1Score 
-        player1Turn = false
+    if ((player1Score <= 22 ) || (player2Score <= 22 )) {
+        if (player1Turn) {
+            player1Score += theRandomNumber
+            player1Scoreboard.innerHTML = player1Score 
+            player1Turn = false
+        } else {
+            player2Score += theRandomNumber
+            player2Scoreboard.innerHTML = player2Score
+            player1Turn = true
+        }
     } else {
-        player2Score += theRandomNumber
-        player2Scoreboard.innerHTML = player2Score
-        player1Turn = true
+        console.log("here you'll change button")
     }
 }
 
