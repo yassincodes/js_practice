@@ -1,30 +1,39 @@
+// Create variables for the game state
 let player1Score = 0
 let player2Score = 0
 let player1Turn = true
-let theRandomNumber = 0
-const rollBtn = document.getElementById('rollBtn')
-const player1Scoreboard = document.getElementById('player1Scoreboard')
-const player2Scoreboard = document.getElementById('player2Scoreboard')
 
-rollBtn.addEventListener('click', function() {
-    theRandomNumber = Math.floor(Math.random() * 6) + 1;
-    startGame()
-})
+// Create variables to store references to the necessary DOM nodes
+const player1Dice = document.getElementById("player1Dice")
+const player2Dice = document.getElementById("player2Dice")
+const player1Scoreboard = document.getElementById("player1Scoreboard")
+const player2Scoreboard = document.getElementById("player2Scoreboard")
+const message = document.getElementById("message")
+const rollBtn = document.getElementById("rollBtn")
+const resetBtn = document.getElementById("resetBtn")
 
-function startGame() {
-    if ((player1Score <= 22 ) || (player2Score <= 22 )) {
-        if (player1Turn) {
-            player1Score += theRandomNumber
-            player1Scoreboard.innerHTML = player1Score 
-            player1Turn = false
-        } else {
-            player2Score += theRandomNumber
-            player2Scoreboard.innerHTML = player2Score
-            player1Turn = true
-        }
+/* Hook up a click event listener to the Roll Dice Button. */
+ rollBtn.addEventListener("click", function() {
+    const randomNumber = Math.floor(Math.random() * 6) + 1
+
+    // 1. Update the scores for each player
+    // 2. Display the scores in their scoreboards
+    if (player1Turn) {
+        player1Dice.textContent = randomNumber
+        player1Dice.classList.remove("active")
+        player2Dice.classList.add("active")
+        player1Score += randomNumber
+        player1Scoreboard.innerHTML = player1Score
+        message.textContent = "Player 2 Turn"
     } else {
-        console.log("here you'll change button")
+        player2Dice.textContent = randomNumber
+        player2Dice.classList.remove("active")
+        player1Dice.classList.add("active")
+        player2Score += randomNumber
+        player2Scoreboard.innerHTML = player2Score
+        message.textContent = "Player 1 Turn"
     }
-}
-
-
+    player1Turn = !player1Turn
+})
+ 
+ 
