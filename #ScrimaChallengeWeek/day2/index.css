@@ -59,3 +59,16 @@
       border-radius: 5px;
       border: none;
   }
+  
+  .greeting-custom-message-input-none {
+      display:none;
+  }
+  .greeting-custom-message-input-show {
+      display:initial;
+  }
+  
+  
+  
+  
+  
+  
