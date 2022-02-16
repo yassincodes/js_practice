@@ -62,3 +62,17 @@
   #second-btn, #reload {
       margin-top:10px;
   }
+  
+  #reload {
+      color: var(--deep-pink);
+      background: none;   
+      border: 2px solid var(--deep-pink);
+      transition: all 150ms ease-in;
+  }
+  
+  #reload:hover {
+      color:white;
+      background: var(--deep-pink);
+  }
+  
+  
