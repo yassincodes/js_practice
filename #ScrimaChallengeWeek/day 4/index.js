@@ -35,6 +35,7 @@ function filterDuplicates() {
     } 
     document.getElementById("btn").textContent = 'done ✔️'
     document.getElementById("btn").removeEventListener('click', filterDuplicates)
+    document.getElementById("btn").classList.remove("button-class")
 }
 
 function sort() {
@@ -43,4 +44,6 @@ function sort() {
     for (let emoji of emojis) {
         allEmojisP.textContent += emoji
     }
+    document.getElementById("btn-sort").textContent = 'done 😁'
+    document.getElementById("btn-sort").classList.remove("button-class")
 }

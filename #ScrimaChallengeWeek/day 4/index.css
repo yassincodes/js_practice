@@ -45,14 +45,18 @@
       border-radius: 5px;
       border: none;
       padding: 1em 2em;
-      color: var(--white);
-      background: var(--deep-pink);
       width:45vw;
       margin:10px;
   }
   
-  button:hover,
-  button:focus {
+  .button-class {
+      box-shadow: none;
+      color: var(--white);
+      background: var(--deep-pink);
+  }
+  
+  .button-class:hover,
+  .button-class:focus {
       transform: scale(1.1);
       cursor: pointer;  
       background:none;
